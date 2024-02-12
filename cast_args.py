@@ -1,4 +1,15 @@
 def cast(**types):
+    """Example:
+    
+    >>> @cast(arg1=str, arg2=str)
+    >>> def concatenate_strings(arg1, arg2):
+    >>>    assert isinstance(arg1, str)
+    >>>    assert isinstance(arg2, str)
+    >>>    return arg1 + arg2
+    
+    >>> concatenate_strings(123, arg2=456)
+    "123456"
+    """    
     def decorator(func):
         def wrapper(*args, **kwargs):
             # Cast positional arguments
